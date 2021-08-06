@@ -26,8 +26,10 @@ while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Exit':
         break
-    if event == 'Sumbit':
+    if event == 'Submit':
         df = df.append(values, ignore_index=True)
         df.to_excel(EXCEL_FILE, index=False)
         sg.popup('Data saved!')
 window.close()
+
+print(df.head())
